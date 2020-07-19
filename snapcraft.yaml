@@ -34,7 +34,9 @@ parts:
   pihole-snap:
     source: https://github.com/pi-hole/pi-hole
     source-type: git
-    plugin: nil
+    plugin: dump
+    organize:
+      '*': /opt
   
     build-packages:
       - python3
@@ -84,8 +86,3 @@ parts:
       - dns-root-data 
       - libcap2
       - libslang2
-
-  publish:
-    plugin: copy
-    files:
-      .*: /opt

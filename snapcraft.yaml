@@ -84,3 +84,8 @@ parts:
       - dns-root-data 
       - libcap2
       - libslang2
+
+  publish:
+    plugin: copy
+    files:
+      .*: /opt

@@ -36,7 +36,7 @@ parts:
     source-type: git
     plugin: dump
     organize:
-      '*': /opt
+      '*': /opt/
   
     build-packages:
       - python3

@@ -1,4 +1,4 @@
-name: pihole
+name: pihole-snap
 version: 'git'
 summary: Network-wide ad blocking via your own Linux hardware
 description: |
@@ -19,7 +19,7 @@ grade: stable
 confinement: strict
 
 apps:
-  pihole:
+  pihole-snap:
     command: pihole
     environment:
       LC_ALL: C.UTF-8
@@ -28,54 +28,55 @@ apps:
       - network-bind
       
 parts:
-  source: https://github.com/pi-hole/pi-hole
-  source-type: git
-  plugin: nil
+  pihole-snap:
+    source: https://github.com/pi-hole/pi-hole
+    source-type: git
+    plugin: nil
   
-  build-packages:
-    - python3
-    - php
-    - php-sqlite3
-    - whiptail 
-    - dnsutils
-    - dhcpcd5 
-    - git
-    - lighttpd
-    - php-common
-    - cron 
-    - curl 
-    - iputils-ping 
-    - lsof 
-    - netcat 
-    - psmisc 
-    - unzip 
-    - wget 
-    - idn2 
-    - sqlite3 
-    - libcap2-bin 
-    - dns-root-data 
-    - libcap2  
+    build-packages:
+      - python3
+      - php
+      - php-sqlite3
+      - whiptail 
+      - dnsutils
+      - dhcpcd5 
+      - git
+      - lighttpd
+      - php-common
+      - cron 
+      - curl 
+      - iputils-ping 
+      - lsof 
+      - netcat 
+      - psmisc 
+      - unzip 
+      - wget 
+      - idn2 
+      - sqlite3 
+      - libcap2-bin 
+      - dns-root-data 
+      - libcap2  
     
-  stage-packages:
-    - python3
-    - php
-    - php-sqlite3
-    - whiptail 
-    - dnsutils
-    - dhcpcd5 
-    - git
-    - lighttpd
-    - php-common
-    - cron 
-    - curl 
-    - iputils-ping 
-    - lsof 
-    - netcat 
-    - psmisc 
-    - unzip 
-    - wget 
-    - idn2 
-    - sqlite3 
-    - libcap2-bin 
-    - dns-root-data 
-    - libcap2
+    stage-packages:
+      - python3
+      - php
+      - php-sqlite3
+      - whiptail 
+      - dnsutils
+      - dhcpcd5 
+      - git
+      - lighttpd
+      - php-common
+      - cron 
+      - curl 
+      - iputils-ping 
+      - lsof 
+      - netcat 
+      - psmisc 
+      - unzip 
+      - wget 
+      - idn2 
+      - sqlite3 
+      - libcap2-bin 
+      - dns-root-data 
+      - libcap2

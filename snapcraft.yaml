@@ -20,12 +20,15 @@ confinement: strict
 
 apps:
   pihole-snap:
-    command: pihole
+    command: bash $SNAP/opt/pihole
     environment:
       LC_ALL: C.UTF-8
     plugs:
       - network
       - network-bind
+      - process-control
+      - system-observe
+      - hardware-observe
       
 parts:
   pihole-snap:
@@ -80,3 +83,4 @@ parts:
       - libcap2-bin 
       - dns-root-data 
       - libcap2
+      - libslang2

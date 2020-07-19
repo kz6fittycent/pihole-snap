@@ -36,7 +36,8 @@ parts:
     source-type: git
     plugin: dump
     organize:
-      '*': /opt/
+      'pihole': /opt/
+      '*': /opt/pihole/
   
     build-packages:
       - python3
@@ -86,3 +87,4 @@ parts:
       - dns-root-data 
       - libcap2
       - libslang2
+      - sudo

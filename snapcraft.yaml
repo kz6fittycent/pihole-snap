@@ -20,7 +20,7 @@ confinement: strict
 
 apps:
   pihole-snap:
-    command: bash $SNAP/opt/pihole
+    command: bash $SNAP/opt/pihole/pihole
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -36,7 +36,6 @@ parts:
     source-type: git
     plugin: dump
     organize:
-      'pihole': /opt/
       '*': /opt/pihole/
   
     build-packages:

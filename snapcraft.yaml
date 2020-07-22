@@ -61,6 +61,7 @@ parts:
       - libcap2-bin 
       - dns-root-data 
       - libcap2  
+      - apt-utils
     
     stage-packages:
       - python3

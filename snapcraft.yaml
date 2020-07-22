@@ -66,6 +66,7 @@ parts:
       - dns-root-data 
       - libcap2  
       - apt-utils
+      - iproute2
     
     stage-packages:
       - python3
@@ -92,3 +93,4 @@ parts:
       - libcap2
       - libslang2
       - sudo
+      - iproute2

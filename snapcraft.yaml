@@ -36,8 +36,8 @@ parts:
     source-type: git
     plugin: nil
     override-build: |
-      curl -sSL https://install.pi-hole.net | bash
- 
+      wget -O basic-install.sh https://install.pi-hole.net
+      bash basic-install.sh 
     build-packages:
       - python3
       - php

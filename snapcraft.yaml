@@ -34,10 +34,10 @@ parts:
   pihole-snap:
     source: https://github.com/pi-hole/pi-hole
     source-type: git
-    plugin: dump
-    organize:
-      '*': /opt/pihole/
-  
+    plugin: nil
+    override-build: |
+      curl -sSL https://install.pi-hole.net | bash
+ 
     build-packages:
       - python3
       - php

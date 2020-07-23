@@ -36,9 +36,9 @@ parts:
     source-type: git
     plugin: nil
     override-build: |
-      mkdir -p /tmp
+      sudo mkdir -p /tmp
       cd /tmp && wget -O basic-install.sh https://install.pi-hole.net
-      bash /tmp/basic-install.sh 
+      sudo bash /tmp/basic-install.sh 
       
       snapcraftctl build
       

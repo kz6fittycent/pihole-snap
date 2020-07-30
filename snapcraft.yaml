@@ -40,7 +40,7 @@ parts:
       cd "Pi-hole/automated install/"
       sudo bash basic-install.sh
       
-      snapcraftctl build
+#      snapcraftctl build
       
     build-packages:
       - python3

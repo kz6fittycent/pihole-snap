@@ -29,6 +29,10 @@ apps:
       - process-control
       - system-observe
       - hardware-observe
+      - daemon-notify
+      - log-observe
+      - process-control
+      - system-files
       
 parts:
   pihole-snap:
@@ -38,7 +42,7 @@ parts:
     override-build: |
       git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
       cd "Pi-hole/automated install/"
-      sudo bash basic-install.sh
+      bash basic-install.sh
       
 #      snapcraftctl build
       

@@ -31,7 +31,6 @@ apps:
       - hardware-observe
       - daemon-notify
       - log-observe
-      - process-control
       - system-files
       
 parts:

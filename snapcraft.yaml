@@ -64,6 +64,7 @@ parts:
       - libcap2  
       - apt-utils
       - iproute2
+      - wget
     
     stage-packages:
       - python3
@@ -91,3 +92,4 @@ parts:
       - libslang2
       - sudo
       - iproute2
+      - wget

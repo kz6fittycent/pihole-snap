@@ -35,8 +35,9 @@ apps:
       
 parts:
   pihole-snap:
-    plugin: dump
-    source: script
+    plugin: nil
+    source: https://github.com/kz6fittycent/pihole-snap
+    source-type: git
       
     stage-packages:
       - python3
@@ -64,3 +65,8 @@ parts:
       - libslang2
       - sudo
       - iproute2
+      - libatm1
+      
+  publish:
+    plugin: dump
+    source: .

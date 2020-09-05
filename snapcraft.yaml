@@ -20,7 +20,7 @@ confinement: strict
 
 apps:
   pihole-snap:
-    command: $SNAP/sh pihole
+    command: bin/sh launch
     environment:
       LC_ALL: C.UTF-8
     plugs:

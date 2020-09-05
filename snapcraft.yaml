@@ -35,8 +35,6 @@ apps:
       
 parts:
   pihole-snap:
-    source: https://github.com/pi-hole/pi-hole
-    source-type: git
     plugin: dump
     source: script
 

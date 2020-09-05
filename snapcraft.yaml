@@ -37,35 +37,7 @@ parts:
   pihole-snap:
     plugin: dump
     source: script
-
       
-    build-packages:
-      - python3
-      - php
-      - php-sqlite3
-      - whiptail 
-      - dnsutils
-      - dhcpcd5 
-      - git
-      - lighttpd
-      - php-common
-      - cron 
-      - curl 
-      - iputils-ping 
-      - lsof 
-      - netcat 
-      - psmisc 
-      - unzip 
-      - wget 
-      - idn2 
-      - sqlite3 
-      - libcap2-bin 
-      - dns-root-data 
-      - libcap2  
-      - apt-utils
-      - iproute2
-      - wget
-    
     stage-packages:
       - python3
       - php
@@ -92,4 +64,3 @@ parts:
       - libslang2
       - sudo
       - iproute2
-      - wget

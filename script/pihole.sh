@@ -7,5 +7,5 @@ set -e
 (
 	cd $SNAP_USER_DATA
 	$SNAP/wget -O basic-install.sh https://install.pi-hole.net
-  $SNAP/sudo bash basic-install.sh
+        $SNAP/sudo bash basic-install.sh
 )

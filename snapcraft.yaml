@@ -1,5 +1,5 @@
 name: pihole-snap
-adopt-info: pihole-snap
+version: 'git'
 summary: Network-wide ad blocking via your own Linux hardware
 description: |
   The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content, without installing any client-side software.
@@ -38,10 +38,6 @@ parts:
     plugin: nil
     source: https://github.com/kz6fittycent/pihole-snap
     source-type: git
-    
-    override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
       
     stage-packages:
       - python3

@@ -36,8 +36,11 @@ apps:
 parts:
   pihole-snap:
     plugin: nil
-    source: https://github.com/kz6fittycent/pihole-snap
+    source: https://github.com/pi-hole/pi-hole
     source-type: git
+    
+    override-build: |
+      ./basic-install.sh
       
     stage-packages:
       - python3
@@ -66,7 +69,3 @@ parts:
       - sudo
       - iproute2
       - libatm1
-      
-  publish:
-    plugin: dump
-    source: .

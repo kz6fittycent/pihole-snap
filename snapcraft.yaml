@@ -14,7 +14,7 @@ description: |
     - Modern: blocks ads over both IPv4 and IPv6
     - Free: open source software which helps ensure you are the sole person in control of your privacy
 
-base: core18
+base: core20
 grade: stable
 confinement: strict
 
@@ -40,6 +40,7 @@ parts:
     source-type: git
     
     override-build: |
+      cd $SNAPCRAFT_PART_INSTALL
       ./basic-install.sh
       
     stage-packages:

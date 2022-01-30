@@ -20,7 +20,7 @@ confinement: strict
 
 apps:
   pihole-snap:
-    command: pihole
+    command: bin/pihole
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -38,10 +38,6 @@ parts:
     plugin: nil
     source: https://github.com/pi-hole/pi-hole
     source-type: git
-    
-    override-build: |
-      cd $SNAPCRAFT_PART_INSTALL
-      ./basic-install.sh
       
     stage-packages:
       - python3

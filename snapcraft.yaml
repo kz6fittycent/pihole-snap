@@ -36,13 +36,21 @@ apps:
 parts:
   pihole-snap:
     plugin: nil
-    source: https://github.com/pi-hole/pi-hole
+    source: https://github.com/pi-hole/pi-hole.git
     source-type: git
+    
+    override-build: |
+      git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+      cd "Pi-hole/automated install/"
+      bash basic-install.sh
     
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
       
+    build-packages:
+      - curl
+      - git
     stage-packages:
       - python3
       - php

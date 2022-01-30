@@ -51,7 +51,7 @@ parts:
     build-packages:
       - curl
       - git
-      - yes
+
     stage-packages:
       - python3
       - php

@@ -34,7 +34,7 @@ apps:
       - system-files
       
 parts:
-  pihole-snap:
+  pihole:
     plugin: nil
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git

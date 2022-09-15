@@ -40,9 +40,7 @@ parts:
     source-type: git
     
     override-build: |
-      git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
-      cd "Pi-hole/automated install/"
-      yes | bash basic-install.sh
+     curl -sSL https://install.pi-hole.net | bash
     
     override-pull: |
       snapcraftctl pull
@@ -50,7 +48,6 @@ parts:
       
     build-packages:
       - curl
-      - git
 
     stage-packages:
       - python3

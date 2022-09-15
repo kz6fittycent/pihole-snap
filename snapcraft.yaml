@@ -1,5 +1,5 @@
-name: pihole-snap
-adopt-info: pihole-snap
+name: pihole
+adopt-info: pihole
 summary: Network-wide ad blocking via your own Linux hardware
 description: |
   The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content, without installing any client-side software.
@@ -19,7 +19,7 @@ grade: stable
 confinement: strict
 
 apps:
-  pihole-snap:
+  pihole:
     command: pihole
     environment:
       LC_ALL: C.UTF-8

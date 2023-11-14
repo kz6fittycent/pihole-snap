@@ -14,5 +14,5 @@ else
     chmod 750 ${PIHOLE}
 	cd ${PIHOLE}
 	chmod 750 ${PIHOLE}
-    bash "$SNAP/bin/pihole/automated install/basic-install.sh"
+    bash "$SNAP/automated install/basic-install.sh"
 fi

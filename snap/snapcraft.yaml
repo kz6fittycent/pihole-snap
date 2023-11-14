@@ -20,7 +20,7 @@ confinement: strict
 
 apps:
   pihole:
-    command: pihole
+    command: launch
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -74,3 +74,7 @@ parts:
       - sudo
       - iproute2
       - libatm1
+
+  publish:
+    plugin: dump
+    source: script      

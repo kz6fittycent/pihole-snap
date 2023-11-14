@@ -40,7 +40,7 @@ parts:
     source-type: git
     
     override-build: |
-     curl -sSL https://install.pi-hole.net | bash
+     curl -sSL https://github.com/pi-hole/pi-hole/blob/master/automated%20install/basic-install.sh | bash
     
     override-pull: |
       snapcraftctl pull

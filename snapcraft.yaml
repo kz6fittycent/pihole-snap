@@ -38,16 +38,14 @@ parts:
     plugin: nil
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git
-    
     override-build: |
-     curl -sSL https://github.com/pi-hole/pi-hole/blob/master/automated%20install/basic-install.sh | bash
-    
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/
+      cd $SNAPCRAFT_PART_INSTALL/bin/
+      git clone https://github.com/pi-hole/pi-hole.git
+            
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
-      
-    build-packages:
-      - curl
 
     stage-packages:
       - python3

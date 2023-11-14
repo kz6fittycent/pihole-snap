@@ -8,7 +8,6 @@ PIHOLE="$SNAP_COMMON/pihole"
 if [ -d ${PIHOLE} ]
 then
   echo "Pi-hole already installed..."
-  snap start pihole
 else
     mkdir -p ${PIHOLE}
     chmod 750 ${PIHOLE}

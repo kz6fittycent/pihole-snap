@@ -20,7 +20,7 @@ confinement: strict
 
 apps:
   pihole:
-    command: launch
+    command: usr/local/bin/pihole
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -39,14 +39,21 @@ parts:
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git
     override-build: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/
-      cd $SNAPCRAFT_PART_INSTALL/bin/
-      git clone https://github.com/pi-hole/pi-hole.git
+      mkdir -p BUILD
+      cd BUILD
+      curl -o pi-hole.sh install.pi-hole.net
+      chmod 700 pi-hole.sh
+      ./pi-hole.sh --unattended
+      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/local/bin/
+      cp -r * $SNAPCRAFT_PART_INSTALL/usr/local/bin/
             
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
 
+    build-packages:
+      - curl
+      
     stage-packages:
       - python3
       - php

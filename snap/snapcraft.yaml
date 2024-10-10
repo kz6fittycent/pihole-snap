@@ -37,7 +37,7 @@ platforms:
 
 apps:
   pihole:
-    command: launch
+    command: pihole
     environment:
     daemon: simple
     restart-condition: always    
@@ -55,7 +55,14 @@ parts:
     plugin: nil
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git
-            
+    override-build: |
+
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      cd $CRAFT_PART_INSTALL/bin
+      git clone https://github.com/pi-hole/pi-hole.git
+      cd /pi-hole/automated\ install/
+      bash basic-install.sh
+      
     override-pull: |
       craftctl default
       craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 

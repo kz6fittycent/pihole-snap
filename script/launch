@@ -3,13 +3,14 @@
 # Installer script for the Pi-Hole Installer Script
 # Attempt to install in a snap environment using SNAP_COMMON
 
-PIHOLE="/var/${SNAP}/pihole"
+PIHOLE="/var/snap/pihole"
 
 if [ -d ${PIHOLE} ]
 then
   echo "Pi-hole already installed..."
 else
     mkdir -p ${PIHOLE}
+    cp -r $SNAP/pihole ${PIHOLE}
     chmod 750 ${PIHOLE}
 	cd ${PIHOLE}
 	chmod 750 ${PIHOLE}

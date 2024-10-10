@@ -14,13 +14,30 @@ description: |
     - Modern: blocks ads over both IPv4 and IPv6
     - Free: open source software which helps ensure you are the sole person in control of your privacy
 
-base: core20
+base: core24
 grade: stable
 confinement: strict
 
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [arm64]
+    build-for: [arm64]
+  armhf:
+    build-on: [armhf]
+    build-for: [armhf]
+  ppc64el:
+    build-on: [ppc64el]
+    build-for: [ppc64el]
+  s390x:
+    build-on: [s390x]
+    build-for: [s390x]
+
 apps:
   pihole:
-    command: usr/local/bin/pihole
+    command: launch
     environment:
       LC_ALL: C.UTF-8
     plugs:
@@ -38,21 +55,10 @@ parts:
     plugin: nil
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git
-    override-build: |
-      mkdir -p BUILD
-      cd BUILD
-      curl -o pi-hole.sh install.pi-hole.net
-      chmod 700 pi-hole.sh
-      ./pi-hole.sh --unattended
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/local/bin/
-      cp -r * $SNAPCRAFT_PART_INSTALL/usr/local/bin/
             
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
-
-    build-packages:
-      - curl
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
       
     stage-packages:
       - python3
@@ -82,6 +88,6 @@ parts:
       - iproute2
       - libatm1
 
-  publish:
+  launcher:
     plugin: dump
-    source: script      
+    source: script

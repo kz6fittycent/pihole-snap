@@ -61,7 +61,7 @@ parts:
       cd $CRAFT_PART_INSTALL/bin
       git clone https://github.com/pi-hole/pi-hole.git
       cd pi-hole/automated\ install/
-      bash basic-install.sh
+      bash basic-install.sh --unattended
       
     override-pull: |
       craftctl default

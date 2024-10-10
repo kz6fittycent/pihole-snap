@@ -3,7 +3,7 @@
 # Installer script for the Pi-Hole Installer Script
 # Attempt to install in a snap environment using SNAP_COMMON
 
-PIHOLE="$SNAP_COMMON/pihole"
+PIHOLE="/var/${SNAP}/pihole"
 
 if [ -d ${PIHOLE} ]
 then
@@ -13,5 +13,5 @@ else
     chmod 750 ${PIHOLE}
 	cd ${PIHOLE}
 	chmod 750 ${PIHOLE}
-    bash "$SNAP/automated install/basic-install.sh"
+    bash "${PIHOLE}/automated install/basic-install.sh"
 fi

@@ -60,7 +60,7 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/bin
       cd $CRAFT_PART_INSTALL/bin
       git clone https://github.com/pi-hole/pi-hole.git
-      cd /pi-hole/automated\ install/
+      cd pi-hole/automated\ install/
       bash basic-install.sh
       
     override-pull: |

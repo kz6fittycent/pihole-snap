@@ -25,15 +25,6 @@ platforms:
   arm64:
     build-on: [arm64]
     build-for: [arm64]
-  armhf:
-    build-on: [armhf]
-    build-for: [armhf]
-  ppc64el:
-    build-on: [ppc64el]
-    build-for: [ppc64el]
-  s390x:
-    build-on: [s390x]
-    build-for: [s390x]
 
 apps:
   pihole:
@@ -67,33 +58,8 @@ parts:
       craftctl default
       craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
       
-    stage-packages:
-      - python3
-      - php
-      - php-sqlite3
-      - whiptail 
-      - dnsutils
-      - dhcpcd5 
-      - git
-      - lighttpd
-      - php-common
-      - cron 
-      - curl 
-      - iputils-ping 
-      - lsof 
-      - netcat 
-      - psmisc 
-      - unzip 
-      - wget 
-      - idn2 
-      - sqlite3 
-      - libcap2-bin 
-      - dns-root-data 
-      - libcap2
-      - libslang2
-      - sudo
-      - iproute2
-      - libatm1
+    build-packages:
+      - screen
 
   launcher:
     plugin: dump

@@ -47,7 +47,7 @@ parts:
     source: https://github.com/pi-hole/pi-hole.git
     source-type: git
     override-build: |
-
+      hostname -I
       mkdir -p $CRAFT_PART_INSTALL/bin
       cd $CRAFT_PART_INSTALL/bin
       git clone https://github.com/pi-hole/pi-hole.git
